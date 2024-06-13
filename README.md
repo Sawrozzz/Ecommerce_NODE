@@ -13,7 +13,7 @@ Before you begin, ensure you have met the following requirements:
 
 To install E-Commerce Website, follow these steps:
 
-1. Clone the repository: `git clone <repository_url>`
+1. Clone the repository: `git clone https://github.com/Sawrozzz/Ecommerce_NODE`
 2. Navigate into the project directory: `cd <project_directory>`
 3. Install the dependencies: `npm install`
 
