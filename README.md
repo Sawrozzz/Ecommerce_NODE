@@ -29,6 +29,7 @@ To use E-Commerce Website, follow these steps:
 This project uses the following libraries:
 
 * Express: Install with `npm install express`
+* Mongoose: Install with `npm install mongoose`
 * bcrypt: Install with `npm install bcrypt`
 * cookie-parser: Install with `npm install cookie-parser`
 * multer: Install with `npm install multer`
