@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const userSchema = mongoose.Schema({
   fullname: String,
   email: String,
@@ -9,7 +8,6 @@ const userSchema = mongoose.Schema({
     type: Array,
     default: [],
   },
-  isAdmin: Boolean,
   orders: {
     type: Array,
     default: [],
@@ -18,4 +16,4 @@ const userSchema = mongoose.Schema({
   picture: String,
 });
 
-module.exports =  mongoose.model("user", userSchema);
+module.exports = mongoose.model("user", userSchema);
