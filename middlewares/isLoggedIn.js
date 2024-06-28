@@ -18,6 +18,6 @@ module.exports = async function isLoggedIn(req, res, next) {
     next();
   } catch (err) {
     req.flash("error", "Something went wrong");
-    req.redirect("/");
+    res.redirect("/");
   }
 };
