@@ -1,57 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-</head>
-<body class="bg-gray-100">
+  </head>
+  <body class="bg-gray-100">
     <%- include('./partials/header') %>
     <div class="w-full h-screen flex items-start px-10 py-10">
-       <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-screen flex flex-col items-start bg-white p-5 rounded-lg shadow-md">
-    <div class="flex items-center gap-2 mb-5">
-        <h3 class="font-semibold text-lg">Sort by</h3>
-        <form action="/shop">
-            <select class="border-gray-300 px-2 py-1 rounded" name="sortby" id="">
-                <option value="popular">Popular</option>
-                <option value="newest">Newest</option>
+      <div
+        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-screen flex flex-col items-start bg-white p-5 rounded-lg shadow-md"
+      >
+        <div class="flex items-center gap-2 mb-5">
+          <h3 class="font-semibold text-lg">Sort by</h3>
+          <form action="/shop">
+            <select
+              class="border-gray-300 px-2 py-1 rounded"
+              name="sortby"
+              id=""
+            >
+              <option value="popular">Popular</option>
+              <option value="newest">Newest</option>
             </select>
-        </form>
-    </div>
-    <div class="flex flex-col mt-5 space-y-2">
-        <a class="text-blue-500 hover:underline" href="">New Collection</a>
-        <a class="text-blue-500 hover:underline" href="">All Products</a>
-        <a class="text-blue-500 hover:underline" href="">Discounted Products</a>
-    </div>
-      <div class="flex items-center gap-2 mb-5 mt-5">
-        <h3 class="font-semibold text-lg">Filter by</h3>
-        <form action="/shop">
-            <select class="border-gray-300 px-2 py-1 rounded" name="sortby" id="">
-                <option value="popular">Discount</option>
-                <option value="newest">Availability</option>
-            </select>
-        </form>
-    </div>
-</div>
-        <div class="w-3/4 h-screen flex flex-wrap gap-3 p-5 overflow-auto">
-            <% for(let i=0; i<5; i++) { %>
-            <div class="w-60 h-64 flex flex-col bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="w-full h-52">
-                    <img class="w-full h-full object-cover" src="/images/shoes.jpg" alt="shoes image">
-                </div>
-                <div class="flex justify-between items-center px-4 py-4">
-                    <div>
-                        <h3 class="font-semibold text-lg">Shoes</h3>
-                        <h4 class="text-gray-500">Rs 1500</h4>
-                    </div>
-                    <a class="w-7 h-7 flex items-center justify-center rounded-full bg-blue-500 text-white" href="">
-                        <i class="ri-add-line"></i>
-                    </a>
-                </div>
-            </div>
-            <% } %>
+          </form>
         </div>
+        <div class="flex flex-col mt-5 space-y-2">
+          <a class="text-blue-500 hover:underline" href="">New Collection</a>
+          <a class="text-blue-500 hover:underline" href="">All Products</a>
+          <a class="text-blue-500 hover:underline" href=""
+            >Discounted Products</a
+          >
+        </div>
+        <div class="flex items-center gap-2 mb-5 mt-5">
+          <h3 class="font-semibold text-lg">Filter by</h3>
+          <form action="/shop">
+            <select
+              class="border-gray-300 px-2 py-1 rounded"
+              name="sortby"
+              id=""
+            >
+              <option value="popular">Discount</option>
+              <option value="newest">Availability</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="w-full md:w-[75%] flex flex-col gap-5 h-screen overflow-auto">
+        <div class="flex flex-wrap items-start gap-5">
+          <% products.forEach(function(product){ %>
+          <div
+            class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 bg-red-500 m-3 mt-5 flex flex-col rounded"
+          >
+            <div
+              class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]"
+            >
+              <img
+                class="h-[12rem] w-full object-cover object-center"
+                src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                alt=""
+              />
+            </div>
+            <div
+              class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
+            >
+              <div>
+                <h3><%= product.name %></h3>
+                <h4>Rs <%= product.price %></h4>
+              </div>
+              <a
+                class="w-7 h-7 flex items-center justify-center rounded-full bg-white"
+                href=""
+              >
+                <i class="ri-add-line"></i>
+              </a>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
