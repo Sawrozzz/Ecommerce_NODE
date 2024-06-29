@@ -8,13 +8,26 @@
     <title>Document</title>
   </head>
   <body>
-
+    <%- include('./partials/header') %> <% if (success.length > 0) { %>
+    <div
+      id="flash-message"
+      class="fixed top-5 left-1/2 transform -translate-x-1/2 p-3 rounded-md bg-blue-500"
+    >
+      <span class="inline-block text-white"> <%= success %> </span>
+    </div>
+    <script>
+      setTimeout(function () {
+        const flashMessage = document.getElementById("flash-message");
+        if (flashMessage) flashMessage.style.display = "none";
+      }, 2000);
+    </script>
+    <% } %>
 
     <div class="min-h-screen flex flex-col">
       <div class="container px-10 py-20 flex flex-grow">
         <div class="w-[25%] flex h-screen flex-col items-start">
           <div class="flex flex-col">
-            <a class="block w-fit mb-2" href="">All Products</a>
+            <a class="block w-fit mb-2" href="/owners/admin">All Products</a>
             <a class="block w-fit mb-2" href="">Create new product</a>
           </div>
         </div>
@@ -83,7 +96,7 @@
               </div>
             </div>
             <input
-              class="px-5 py-2 rounded mt-3 bg-blue-500 text-white"
+              class="px-5 py-2 rounded mt-3 bg-blue-500 text-white cursor-pointer hover:bg-blue-600"
               type="submit"
               value="Create New Product"
             />
