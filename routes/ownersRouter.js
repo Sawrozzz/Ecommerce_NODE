@@ -3,7 +3,7 @@ const ownerModel = require("../models/owner-model");
 
 const router = express.Router();
 
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === "development") {
   router.post("/create", async function (req, res) {
@@ -31,7 +31,8 @@ router.get("/", function (req, res) {
 });
 
 router.get("/admin",function(req,res){
-  res.render("admin");
+  let success = req.flash("success");
+  res.render("createproducts",{success} );
 })
 
 
