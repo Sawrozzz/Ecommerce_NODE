@@ -18,10 +18,12 @@ To install E-Commerce Website, follow these steps:
 3. Install the dependencies: `npm install`
 
 ## Using E-Commerce Website
-
+'''
+hello this is test
+'''
 To use E-Commerce Website, follow these steps:
 
-1. Start the server: `npm start`
+1. Start the server: `npm nodemon [root file]`
 2. Open your web browser and navigate to `http://localhost:3000`
 
 ## Dependencies
