@@ -13,31 +13,61 @@ Before you begin, ensure you have met the following requirements:
 
 To install E-Commerce Website, follow these steps:
 
-1. Clone the repository: ```git clone https://github.com/Sawrozzz/Ecommerce_NODE```
-2. Navigate into the project directory: ```cd <project_directory>```
-3. Install the dependencies: ```npm install```
+1. Clone the repository:
+```
+git clone https://github.com/Sawrozzz/Ecommerce_NODE
+```
+2. Navigate into the project directory:
+```
+cd <project_directory>
+```
+3. Install the dependencies:
+```
+npm install
+```
 
 ## Using E-Commerce Website
 
 To use E-Commerce Website, follow these steps:
 
-1. Start the server: ```npm start```
-2. Open your web browser and navigate to ```http://localhost:3000```
+1. Start the server:
+```
+npm start
+```
+2. Open your web browser and navigate to 
+```
+http://localhost:3000
+```
 
 ## Dependencies
 
 This project uses the following libraries:
 
-* Express: Install with   ```npm install express```
-* Mongoose: Install with ```npm install mongoose```
-* bcrypt: Install with ```npm install bcrypt```
+* Express: Install with
+```
+npm install express
+```
+* Mongoose: Install with 
+```
+npm install mongoose
+```
+* bcrypt: Install with 
+```
+npm install bcrypt
+```
 *cookie-parser: Install with 
-```npm install cookie-parser```
+```
+npm install cookie-parser
+```
 *multer: Install with 
 ```
 npm install multer
 ```
-* jsonwebtoken: Install with ```npm install jsonwebtoken```
+* jsonwebtoken: Install with
+```
+npm install jsonwebtoken
+```
+
 
 ## Contact
 
