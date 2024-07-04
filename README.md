@@ -33,7 +33,10 @@ This project uses the following libraries:
 * bcrypt: Install with ```npm install bcrypt```
 * cookie-parser: Install with ```npm install cookie-parser```
 * multer: Install with ```npm install multer```
-* jsonwebtoken: Install with ```npm install jsonwebtoken```
+* jsonwebtoken: Install with
+*  ```
+* npm install jsonwebtoken
+* ```
 * kajsdkfa : jk js   ```hiii```
 
 ## Contact
