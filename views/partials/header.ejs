@@ -3,48 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Adhikari Pasal</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
-
-  <body class="font-['helvetica_now_display']">
-    <nav class="w-full fixed top-0 left-0 px-5 py-3">
-      <h3 class="text-xl">Adhikari Pasal</h3>
+  <body class="bg-gray-100">
+    <nav
+      class="w-full fixed top-0 left-0 px-5 py-3 bg-white shadow-md flex items-center justify-between font-sans"
+    >
+      <h3 class="text-xl font-bold text-blue-500">
+        <a href="/">Adhikari Pasal</a>
+      </h3>
+      <% var loggedIn = typeof loggedIn !== "undefined" ? loggedIn : true %> <%
+      if(loggedIn){ %>
+      <div class="flex gap-5">
+        <a href="/shop">Shop</a>
+        <a href="/cart">Cart</a>
+        <a href="">My Account</a>
+        <form action="/users/logout" method="post">
+          <button type="submit" class="text-red-500 font-bold">Logout</button>
+        </form>
+      </div>
+      <%} %>
     </nav>
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Adhikari Pasal</title>
-        <link
-          href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-          rel="stylesheet"
-        />
-        <link
-          href="https://cdn.tailwindcss.com/2.2.19/tailwind.min.css"
-          rel="stylesheet"
-        />
-      </head>
-
-      <body class="font-sans bg-gray-100">
-        <nav
-          class="w-full fixed top-0 left-0 px-5 py-3 bg-white shadow-md flex items-center justify-between"
-        >
-          <h3 class="text-xl font-bold text-blue-500">
-            <a href="/">Adhikari Pasal</a>
-          </h3>
-          <form action="/users/logout" method="post">
-            <button type="submit" class="text-xl font-bold text-blue-500">
-              Logout
-            </button>
-          </form>
-        </nav>
-      </body>
-    </html>
   </body>
 </html>
