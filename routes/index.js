@@ -9,6 +9,15 @@ router.get("/", function (req, res) {
   res.render("index", { error, loggedIn: false });
 });
 
+router.get("/user/profile", isLoggedIn, async function (req, res) {
+  let user = await userModel.findOne({ _id: req.user._id });
+  if (user) {
+    res.render("userProfile", { user });
+  } else {
+    res.status(404).send("User not found");
+  }
+});
+
 router.get("/shop", isLoggedIn, async function (req, res) {
   let products = await productModel.find();
   let success = req.flash("success");
