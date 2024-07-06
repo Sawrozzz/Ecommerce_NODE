@@ -8,6 +8,17 @@
   </head>
   <body class="bg-gray-100">
     <%- include('./partials/header') %>
+      <% if (success.length > 0) { %>
+  <div id="flash-message" class="fixed left-1/2 transform -translate-x-1/2 p-3 rounded-md bg-blue-500">
+    <span class="inline-block text-white"> <%= success %> </span>
+  </div>
+  <script>
+    setTimeout(function () {
+      const flashMessage = document.getElementById("flash-message");
+      if (flashMessage) flashMessage.style.display = "none";
+    }, 2000);
+  </script>
+  <% } %>
     <div class="w-full h-screen flex items-start px-10 py-10">
       <div
         class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-screen flex flex-col items-start bg-white p-5 rounded-lg shadow-md"
@@ -65,12 +76,13 @@
               class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
             >
               <div>
-                <h3><%= product.name %></h3>
-                <h4>Rs <%= product.price %></h4>
+                <h3>Name: <%= product.name %></h3>
+                <h4>Price: Rs <%= product.price %></h4>
+                <h4>Discount: Rs <%= product.discount %></h4>
               </div>
               <a
                 class="w-7 h-7 flex items-center justify-center rounded-full bg-white"
-                href=""
+                href="/addtocart/<%= product._id %>"
               >
                 <i class="ri-add-line"></i>
               </a>
