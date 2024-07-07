@@ -66,34 +66,21 @@
       <div class="w-full md:w-[75%] flex flex-col gap-5 h-screen overflow-auto">
         <div class="flex flex-wrap items-start gap-5">
           <% products.forEach(function(product){ %>
-          <div
-            class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 bg-red-500 m-3 mt-5 flex flex-col rounded"
-          >
-            <div
-              class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]"
-            >
-              <img
-                class="h-[12rem] w-full object-cover object-center"
-                src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
-                alt=""
-              />
-            </div>
-            <div
-              class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]"
-            >
-              <div>
-                <h3>Name: <%= product.name %></h3>
-                <h4>Price: Rs <%= product.price %></h4>
-                <h4>Discount: Rs <%= product.discount %></h4>
-              </div>
-              <a
-                class="w-7 h-7 flex items-center justify-center rounded-full bg-white"
-                href="/addtocart/<%= product._id %>"
-              >
-                <i class="ri-add-line">+</i>
-              </a>
-            </div>
-          </div>
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 m-3 mt-5 flex flex-col rounded-lg overflow-hidden shadow-lg">
+    <div class="flex items-center justify-center bg-[<%= product.bgcolor %>]">
+        <img class="h-52 w-full object-cover" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="<%= product.name %>">
+    </div>
+    <div class="px-6 py-4 bg-[<%= product.panelcolor %>] text-[<%= product.textcolor %>]">
+        <div class="font-bold text-xl mb-2"><%= product.name %></div>
+        <p class="text-base">
+            Price: Rs <%= product.price %><br>
+            Discount: Rs <%= product.discount %>
+        </p>
+    </div>
+    <div class="px-6 pt-4 pb-2 bg-[<%= product.panelcolor %>]">
+        <a href="/addtocart/<%= product._id %>" class="inline-block bg-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-black mr-2 mb-2 ">Add to Cart</a>
+    </div>
+</div>
           <% }) %>
         </div>
       </div>

@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-200 py-10">
-    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden md:max-w-2xl">
-        <div class="md:flex">
-            <div class="md:flex-shrink-0">
-                <img class="h-48 w-full object-cover md:w-48" src="/images/profile.png" alt="profilepic">
-            </div>
-            <div class="p-8">
-                <div class="uppercase tracking-wide text-lg text-indigo-500 font-semibold">User Profile</div>
-                <h2 class="block mt-1 text-lg leading-tight font-medium text-black"><%= user.fullname %></h2>
-                <p class="mt-2 text-gray-500"><%= user.email %></p>
-    
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+     <%- include('./partials/header') %>
+  <body class="bg-gray-200 py-10 ">
+    <div
+      class="mt-14 max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden md:max-w-2xl"
+    >
+      <div class="md:flex">
+        <div class="md:flex-shrink-0">
+          <img
+            class="h-48 w-full object-cover md:w-48"
+            src="/images/profile.png"
+            alt="profilepic"
+          />
         </div>
+        <div class="p-8">
+          <div
+            class="uppercase tracking-wide text-lg text-indigo-500 font-semibold"
+          >
+            User Profile
+          </div>
+          <h2 class="block mt-1 text-lg leading-tight font-medium text-black">
+            <%= user.fullname %>
+          </h2>
+          <p class="mt-2 text-gray-500"><%= user.email %></p>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

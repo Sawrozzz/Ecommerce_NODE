@@ -23,7 +23,7 @@
    <%user.cart.forEach(function(item){ %>
      <div class="font-sans w-full h-screen flex items-start px-20 py-20 gap-10">
         <div class="w-[30%] rounded-md overflow-hidden">
-            <div class=" h-80 flex justify-center items-center bg-[<%item.bgcolor %>] ">
+            <div class=" h-80 flex justify-center items-center bg-[<%=item.bgcolor %>] ">
                 <img class="h-[15rem] w-[20rem]  object-contain " src="data:image/jpeg;base64, <%=item.image.toString('base64') %>" alt="">
             </div>
             <div class="w-full flex justify-between px-5 py-4 bg-[<%=item.panelcolor%>]">
