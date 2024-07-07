@@ -36,9 +36,11 @@ router.get("/cart", isLoggedIn, async function (req, res) {
   let user = await userModel
     .findOne({ email: req.user.email })
     .populate("cart");
+
   let error = req.flash("error");
   if (user.cart && user.cart.length > 0) {
-    const bill = Number(user.cart[0].price) + 20 - Number(user.cart[0].discount);
+    const bill =
+      Number(user.cart[0].price) + 20 - Number(user.cart[0].discount);
     res.render("cart", { user, bill, error });
   } else {
     req.flash("error", "No products in cart goto Shop to add products");
