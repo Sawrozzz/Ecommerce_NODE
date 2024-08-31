@@ -1,5 +1,6 @@
 const express = require("express");
 const ownerModel = require("../models/owner-model");
+const { loginOwner } = require("../controllers/authController");
 
 const router = express.Router();
 
@@ -26,14 +27,16 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-router.get("/", function (req, res) {
-  res.send("Owners route");
+router.post("/login", loginOwner);
+
+router.get("/login", function (req, res) {
+  let error = req.flash("error");
+  res.render("adminlogin", { error, loggedIn: false });
 });
 
-router.get("/admin",function(req,res){
+router.get("/createproduct", function (req, res) {
   let success = req.flash("success");
-  res.render("createproducts",{success} );
-})
-
+  res.render("createproducts", { success });
+});
 
 module.exports = router;
