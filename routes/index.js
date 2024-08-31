@@ -4,7 +4,16 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const productModel = require("../models/product-model");
 const userModel = require("../models/user-model");
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res){
+  let error = req.flash("error");
+  res.render("home",{error, loggedIn:false})
+})
+
+// router.get("/owners/login", function (req, res) {
+//   let error = req.flash("error");
+//   res.render("adminlogin", { error, loggedIn: false });
+// });
+router.get("/user/login", function (req, res) {
   let error = req.flash("error");
   res.render("index", { error, loggedIn: false });
 });
