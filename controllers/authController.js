@@ -1,4 +1,5 @@
 const userModel = require("../models/user-model");
+const ownerModel = require("../models/owner-model")
 const bcrypt = require("bcrypt");
 const { generateToken } = require("../utils/generateToken");
 
@@ -53,6 +54,19 @@ module.exports.loginUser = async function (req, res) {
     }
   });
 };
+
+module.exports.loginOwner = async function (req, res){
+  let {email, password} = req.body;
+  let user = await ownerModel.findOne({email:email, password:password});
+  if(!user){
+    req.flash("error", "You are not the owner");
+
+   return res.redirect("/owners/login");
+  }
+ res.redirect("/owners/createproduct");
+
+  
+}
 
 module.exports.logoutUser = function (req, res) {
   res.clearCookie("token", {
