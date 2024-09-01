@@ -21,7 +21,7 @@ router.post("/create", upload.single("image"), async function (req, res) {
       textcolor,
     });
     req.flash("success", "Product created successfully");
-    res.redirect("/owners/admin");
+    res.redirect("/owners/createproduct");
   } catch {
     res.send(err.message);
   }
