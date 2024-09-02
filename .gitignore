@@ -3,4 +3,3 @@ node_modules/
 config/development.json
 config/keys.js
 .vscode/
-app.js
